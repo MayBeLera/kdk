@@ -722,6 +722,7 @@ body {
   gap: 20px;
 }
 .feedback__list li {
+  justify-items: center;
   display: block;
   width: 100%;
 }
@@ -1143,6 +1144,7 @@ body {
 .footer__hero {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 .footer__info {
   display: flex;
@@ -1253,6 +1255,17 @@ body {
   .form__column-text {
     margin-bottom: 30px;
   }
+  .footer__hero {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer__info {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .footer__socials {
+    margin-right: 0;
+  }
 }
 @media (max-width: 1060px) {
   .portfolio__inner {
@@ -1355,6 +1368,7 @@ body {
   /* ----------------------------------------------------------- */
   .stocks__inner {
     flex-direction: column;
+    align-items: center;
   }
   .promo-modal__title {
     font-size: 24px;
@@ -1508,5 +1522,11 @@ body {
   /* ----------------------------------------------------------- */
   .stocks__column {
     padding: 40px;
+  }
+  .footer__top {
+    align-items: start;
+    margin-bottom: 60px;
+    flex-direction: column;
+    gap: 20px;
   }
 }
