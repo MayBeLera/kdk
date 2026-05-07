@@ -24,3 +24,11 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Onest';
+    src: url('../font/Onest-SemiBold.woff2') format('woff2'),
+        url('../font/Onest-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
