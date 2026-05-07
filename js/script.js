@@ -366,7 +366,7 @@ function initSwiper() {
     if (!container) return;
     
     swiperInstance = new Swiper(container, {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 20,
         loop: promosData.length > 1,    
         navigation: {
@@ -379,6 +379,9 @@ function initSwiper() {
         simulateTouch: true,  
         touchRatio: 1,
         threshold: 5,
+        breakpoints: {
+            1001: { slidesPerView: 2,}
+        }
     });
 }
 
