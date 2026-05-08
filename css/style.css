@@ -460,7 +460,10 @@ body {
 .hero-pagination .swiper-pagination-bullet-active {
   background: #ffffff;
 }
-
+.hero-slide_1,
+.hero-slide_2 {
+  left: -95px;
+}
 /* ---------------------------------------------------------------------------------------------------------- */
 .advantages__list {
   display: flex;
@@ -1505,7 +1508,11 @@ body {
     line-height: 125%;
     max-width: 230px;
     font-size: 14px;
-}
+  }
+  .hero-slide_1,
+  .hero-slide_2 {
+    left: 0;
+  }
   /* ----------------------------------------------------------- */
   .form__column .title {
     max-width: 100%;
@@ -1525,6 +1532,10 @@ body {
   }
   .banner__btns a {
     font-size: 16px;
+  }
+  .hero-slide_1,
+  .hero-slide_2 {
+    left: 25px;
   }
   /* ----------------------------------------------------------- */
   .portfolio__column-bottom {
