@@ -1268,6 +1268,19 @@ body {
   .footer__socials {
     margin-right: 0;
   }
+
+  .hero__inner {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  .hero-slide_4 img {
+    max-width: 350px;
+  }
+  .hero-slide {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
 }
 @media (max-width: 1060px) {
   .portfolio__inner {
@@ -1296,6 +1309,7 @@ body {
     height: auto;
     object-fit: cover;
   }
+
   /* ----------------------------------------------------------- */
 }
 @media (max-width: 900px) {
@@ -1445,11 +1459,10 @@ body {
   }
   .hero-slide {
     padding: 30px;
-    overflow: hidden;
   }
   .hero__arrows {
-    top: 30px;
-    right: 30px;
+    top: 10px;
+    right: 10px;
     gap: 15px;
   }
   .hero-slide__column {
@@ -1457,15 +1470,36 @@ body {
   }
   .hero-slide__title {
     font-size: 30px;
+    margin-top: 30px;
   }
   .hero__inner {
     height: 400px;
     margin-top: -27px;
     overflow: hidden;
   }
+  .hero-slide {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .hero-slide__img {
+    flex-shrink: 0;
+  }
   .hero-slide__img img {
-    max-width: 325px;
+    max-width: 280px;
     z-index: 0;
+    left: auto;
+    right: -85px;
+  }
+  .hero-slide_4 img {
+    max-width: 250px;
+  }
+  .hero-slide_3 img {
+    max-width: 205px;
+    right: -105px;
+  }
+  .swiper-horizontal > .swiper-pagination-bullets {
+    padding-right: 10px;
+    padding-bottom: 10px;
   }
   /* ----------------------------------------------------------- */
   .form__column .title {
@@ -1480,10 +1514,10 @@ body {
 @media (max-width: 500px) {
   .header__inner {
     gap: 30px;
-}
-.logo {
-        flex-shrink: 1;
-    }
+  }
+  .logo {
+    flex-shrink: 1;
+  }
   .banner__btns a {
     font-size: 16px;
   }
