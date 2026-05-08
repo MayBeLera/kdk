@@ -1501,6 +1501,11 @@ body {
     padding-right: 10px;
     padding-bottom: 10px;
   }
+  .hero-slide__desc {
+    line-height: 125%;
+    max-width: 230px;
+    font-size: 14px;
+}
   /* ----------------------------------------------------------- */
   .form__column .title {
     max-width: 100%;
