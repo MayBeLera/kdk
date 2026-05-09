@@ -1142,19 +1142,19 @@ body {
   color: rgba(55, 48, 55, 0.8);
   line-height: 140%;
 }
-.promo-slide__btn{
+.promo-slide__btn {
   padding: 16px 24px;
   background: var(--accent);
-    color: #ffffff;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all .3s;
-    border-radius: 24px;
-        display: block;
-    width: fit-content;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 24px;
+  display: block;
+  width: fit-content;
 }
-.promo-slide__btn:hover{
-  background: var(--general-dark) ;
+.promo-slide__btn:hover {
+  background: var(--general-dark);
   color: var(--body-bg);
 }
 /* ---------------------------------------------------------------------------------------------------------- */
@@ -1682,8 +1682,10 @@ body {
   }
   /* ----------------------------------------------------------- */
   .feedback__list {
-    grid-template-columns: 1fr;
-    justify-items:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   /* ----------------------------------------------------------- */
   .stocks__column {
