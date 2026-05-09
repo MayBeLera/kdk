@@ -226,79 +226,96 @@
                             </svg>
                         </a>
                     </div>
-                    <ul class="directions__list">
-                        <li class="directions__item">
-                            <div class="directions__item-top">
-                                <p class="directions__item-title">Терапия</p>
-                                <img class="directions__item-img" src="img/decor/dir-1.jpg" alt="">
-                            </div>
-                            <div class="directions__item-tags">
-                                <p class="directions__item-tag">Кариес</p>
-                                <p class="directions__item-tag">Пульпит</p>
-                                <p class="directions__item-tag">Пародонтит</p>
-                                <p class="directions__item-tag">Другие заболевания</p>
-                            </div>
-                        </li>
-                        <li class="directions__item">
-                            <div class="directions__item-top">
-                                <p class="directions__item-title">Детская стоматология</p>
-                                <img class="directions__item-img" src="img/decor/dir-2.jpg" alt="">
-                            </div>
-                            <div class="directions__item-tags">
-                                <p class="directions__item-tag">Кариес</p>
-                                <p class="directions__item-tag">Пульпит</p>
-                                <p class="directions__item-tag">Гигиена</p>
-                                <p class="directions__item-tag">Рекомендации по уходу</p>
-                            </div>
-                        </li>
-                        <li class="directions__item">
-                            <div class="directions__item-top">
-                                <p class="directions__item-title">Профилактика</p>
-                                <img class="directions__item-img" src="img/decor/dir-3.jpg" alt="">
-                            </div>
-                            <div class="directions__item-tags">
-                                <p class="directions__item-tag">Гигиена</p>
-                                <p class="directions__item-tag">Отбеливание</p>
-                                <p class="directions__item-tag">Рекомендации по уходу</p>
-                            </div>
-                        </li>
-                        <li class="directions__item">
-                            <div class="directions__item-top">
-                                <p class="directions__item-title">Ортодонтия</p>
-                                <img class="directions__item-img" src="img/decor/dir-4.jpg" alt="">
-                            </div>
-                            <div class="directions__item-tags">
-                                <p class="directions__item-tag">Капа</p>
-                                <p class="directions__item-tag">Брекеты</p>
-                                <p class="directions__item-tag">Элайнеры</p>
-                                <p class="directions__item-tag">Коррекция прикуса</p>
-                            </div>
-                        </li>
-                        <li class="directions__item">
-                            <div class="directions__item-top">
-                                <p class="directions__item-title">Восстановление</p>
-                                <img class="directions__item-img" src="img/decor/dir-5.jpg" alt="">
-                            </div>
-                            <div class="directions__item-tags">
-                                <p class="directions__item-tag">Коронки</p>
-                                <p class="directions__item-tag">Имплантация</p>
-                                <p class="directions__item-tag">Виниры</p>
-                                <p class="directions__item-tag">Протезирование</p>
-                            </div>
-                        </li>
-                        <li class="directions__item">
-                            <div class="directions__item-top">
-                                <p class="directions__item-title">Хирургия</p>
-                                <img class="directions__item-img" src="img/decor/dir-6.jpg" alt="">
-                            </div>
-                            <div class="directions__item-tags">
-                                <p class="directions__item-tag">Удаление зубов</p>
-                                <p class="directions__item-tag">Костная пластика</p>
-                                <p class="directions__item-tag">Пластика десны</p>
-                                <p class="directions__item-tag">Другие операции</p>
-                            </div>
-                        </li>
-                    </ul>
+                    
+                    <!-- Swiper обертка (заменяет ul.directions__list) -->
+                    <div class="swiper directions-swiper">
+                        <div class="swiper-wrapper directions-wrapper">
+                            <!-- Слайд 1 - заменяет li.directions__item -->
+                            <a href="#" class="swiper-slide directions__item">
+                                <div class="directions__item-top">
+                                    <p class="directions__item-title">Терапия</p>
+                                    <img class="directions__item-img" src="img/decor/dir-1.jpg" alt="">
+                                </div>
+                                <div class="directions__item-tags">
+                                    <p class="directions__item-tag">Кариес</p>
+                                    <p class="directions__item-tag">Пульпит</p>
+                                    <p class="directions__item-tag">Пародонтит</p>
+                                    <p class="directions__item-tag">Другие заболевания</p>
+                                </div>
+                            </a>
+                            
+                            <!-- Слайд 2 -->
+                            <a href="#" class="swiper-slide directions__item">
+                                <div class="directions__item-top">
+                                    <p class="directions__item-title">Детская стоматология</p>
+                                    <img class="directions__item-img" src="img/decor/dir-2.jpg" alt="">
+                                </div>
+                                <div class="directions__item-tags">
+                                    <p class="directions__item-tag">Кариес</p>
+                                    <p class="directions__item-tag">Пульпит</p>
+                                    <p class="directions__item-tag">Гигиена</p>
+                                    <p class="directions__item-tag">Рекомендации по уходу</p>
+                                </div>
+                            </a>
+                            
+                            <!-- Слайд 3 -->
+                            <a href="#" class="swiper-slide directions__item">
+                                <div class="directions__item-top">
+                                    <p class="directions__item-title">Профилактика</p>
+                                    <img class="directions__item-img" src="img/decor/dir-3.jpg" alt="">
+                                </div>
+                                <div class="directions__item-tags">
+                                    <p class="directions__item-tag">Гигиена</p>
+                                    <p class="directions__item-tag">Отбеливание</p>
+                                    <p class="directions__item-tag">Рекомендации по уходу</p>
+                                </div>
+                            </a>
+                            
+                            <!-- Слайд 4 -->
+                            <a href="#" class="swiper-slide directions__item">
+                                <div class="directions__item-top">
+                                    <p class="directions__item-title">Ортодонтия</p>
+                                    <img class="directions__item-img" src="img/decor/dir-4.jpg" alt="">
+                                </div>
+                                <div class="directions__item-tags">
+                                    <p class="directions__item-tag">Капа</p>
+                                    <p class="directions__item-tag">Брекеты</p>
+                                    <p class="directions__item-tag">Элайнеры</p>
+                                    <p class="directions__item-tag">Коррекция прикуса</p>
+                                </div>
+                            </a>
+                            
+                            <!-- Слайд 5 -->
+                            <a href="#" class="swiper-slide directions__item">
+                                <div class="directions__item-top">
+                                    <p class="directions__item-title">Восстановление</p>
+                                    <img class="directions__item-img" src="img/decor/dir-5.jpg" alt="">
+                                </div>
+                                <div class="directions__item-tags">
+                                    <p class="directions__item-tag">Коронки</p>
+                                    <p class="directions__item-tag">Имплантация</p>
+                                    <p class="directions__item-tag">Виниры</p>
+                                    <p class="directions__item-tag">Протезирование</p>
+                                </div>
+                            </a>
+                            
+                            <!-- Слайд 6 -->
+                            <a href="#" class="swiper-slide directions__item">
+                                <div class="directions__item-top">
+                                    <p class="directions__item-title">Хирургия</p>
+                                    <img class="directions__item-img" src="img/decor/dir-6.jpg" alt="">
+                                </div>
+                                <div class="directions__item-tags">
+                                    <p class="directions__item-tag">Удаление зубов</p>
+                                    <p class="directions__item-tag">Костная пластика</p>
+                                    <p class="directions__item-tag">Пластика десны</p>
+                                    <p class="directions__item-tag">Другие операции</p>
+                                </div>
+                            </a>
+                        </div>
+                                                
+                        <div class="swiper-scrollbar directions-scrollbar"></div>
+                    </div>
                 </div>
             </section>
 
@@ -315,8 +332,8 @@
                                 Буду рад познакомиться с вами лично на консультации.
                             </p>
                             <div class="banner__btns">
-                                <a href="#">Записаться на консультацию</a>
-                                <a href="#">Задать вопрос врачу</a>
+                                <a href="#" class="hero-slide__btn">Записаться на консультацию</a>
+                                <a href="mailto:example@mail.ru" class="">Задать вопрос врачу</a>
                             </div>
                         </div>
                     </div>
@@ -571,7 +588,7 @@
                                     Ответим на все беспокоящие вас вопросы и дадим рекомендации перед первым приемом.
                                 </p>
                             </div>
-                            <a class="stocks__column-btn" href="#">
+                            <a class="stocks__column-btn" href="#form">
                                 Получить консультацию
                             </a>
                         </div>
@@ -579,7 +596,7 @@
                 </div>
             </section>
 
-            <section class="form">
+            <section class="form" id="form">
                 <div class="container">
                     <div class="form__inner">
                         <div class="form__column">

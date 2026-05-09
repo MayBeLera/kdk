@@ -81,6 +81,36 @@ const heroSwiper = new Swiper('.hero-swiper', {
 });
 
 
+// direction-slider
+document.addEventListener('DOMContentLoaded', function() {
+    function checkAndInitSwiper() {
+        if (window.innerWidth >= 1101) {
+            return; 
+        }
+        
+        new Swiper('.directions-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            centeredSlides: window.innerWidth <= 800,
+            scrollbar: {
+                el: '.directions-scrollbar',
+                hide: false,
+                draggable: true,
+            },
+            breakpoints: {
+                801: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    centeredSlides: false
+                }
+            }
+        });
+    }
+    
+    checkAndInitSwiper();
+});
+
+
 
 // portfolio-slider
 let portfolioSlider = new Swiper('.portfolio-swiper', {
@@ -325,6 +355,272 @@ video.addEventListener('ended', () => {
 
 
 // promo
+// const promosData = [
+//     {
+//         title: "Скидка -15%:",
+//         badge: "Счастливые часы",
+//         description: "По будням с 10:00 до 16:00 скидка 20% на прием специалиста Х.",
+//         btn: "Записаться на прием",
+//     },
+//     {
+//         title: "Скидка -30%:",
+//         badge: "Имплантация зубов",
+//         description: "Восстановление зубов по технологиям All on 4 и 6 - 420 000₽ вместо 600 000₽.",
+//         btn: "Записаться на прием",
+//     },
+//     {
+//         title: "Скидка -15%:",
+//         badge: "Первичный прием",
+//         description: "Скидка для новых пациентов - прием специалиста по сниженной цене..",
+//         btn: "Записаться на прием",
+//     },
+//     {
+//         title: "Скидка -15%:",
+//         badge: "Счастливые часы",
+//         description: "По будням с 10:00 до 16:00 скидка 20% на прием специалиста Х.",
+//         btn: "Записаться на прием",
+//     },
+//     {
+//         title: "Скидка -15%:",
+//         badge: "Счастливые часы",
+//         description: "По будням с 10:00 до 16:00 скидка 20% на прием специалиста Х.",
+//         btn: "Записаться на прием",
+//     }
+// ];
+
+// let swiperInstance = null;  
+
+// function renderSlides() {
+//     const wrapper = document.getElementById('promoSlidesWrapper');
+//     if (!wrapper) return;
+//     if (!promosData.length) {
+//         wrapper.innerHTML = `<div class="swiper-slide" style="display:flex; align-items:center; justify-content:center; min-height:300px;">
+//                                 <div style="text-align:center; color:#9b7c64;">На данный момент акций нет.<br>Загляните позже!</div>
+//                              </div>`;
+//         return;
+//     }
+
+//     let slidesHtml = '';
+//     for (let promo of promosData) {
+//         slidesHtml += `
+//             <div class="swiper-slide">
+//                 <div class="promo-slide">
+//                     <div>
+//                         <div class="promo-slide__title title  title__accent">${escapeHtml(promo.title)}</div>
+//                         <div class="promo-slide__badge title">${escapeHtml(promo.badge)}</div>
+//                         <div class="promo-slide__desc">${escapeHtml(promo.description)}</div>
+//                     </div>
+//                     <div class="promo-slide__footer">
+//                         <a class="promo-slide__btn" href="#form">${escapeHtml(promo.btn)}</a>
+//                     </div>
+//                 </div>
+//             </div>
+//         `;
+//     }
+//     wrapper.innerHTML = slidesHtml;
+// }
+
+// function initSwiper() {
+//     if (swiperInstance) {
+//         swiperInstance.destroy(true, true); 
+//     }
+//     const container = document.querySelector('#promoSwiperContainer');
+//     if (!container) return;
+    
+//     swiperInstance = new Swiper(container, {
+//         slidesPerView: 1,
+//         spaceBetween: 20,
+//         loop: promosData.length > 1,    
+//         navigation: {
+//             nextEl: '.promo-next',
+//             prevEl: '.promo-prev',
+//         },
+//         effect: 'slide',
+//         speed: 400,
+//         grabCursor: true,     
+//         simulateTouch: true,  
+//         touchRatio: 1,
+//         threshold: 5,
+//         breakpoints: {
+//             1001: { slidesPerView: 2,}
+//         }
+//     });
+// }
+
+// function escapeHtml(str) {
+//     if (!str) return '';
+//     return str.replace(/[&<>]/g, function(m) {
+//         if (m === '&') return '&amp;';
+//         if (m === '<') return '&lt;';
+//         if (m === '>') return '&gt;';
+//         return m;
+//     });
+// }
+
+// const modalOverlay = document.getElementById('promoModalOverlay');
+// const openBtn = document.getElementById('promoShowBtn');
+// const closeBtn = document.getElementById('promoModalCloseBtn');
+
+// function openPromoModal() {
+//     if (!modalOverlay) return;
+
+//     renderSlides();
+        
+//     modalOverlay.classList.add('active');
+//     document.body.style.overflow = 'hidden';
+        
+//     setTimeout(() => {
+//         initSwiper();
+//     }, 80);
+// }
+
+// function closePromoModal() {
+//     if (modalOverlay) {
+//         modalOverlay.classList.remove('active');
+//         document.body.style.overflow = '';
+//          if (swiperInstance) {
+//             swiperInstance.destroy(true, true);
+//             swiperInstance = null;
+//         }
+//     }
+// }
+
+// if (openBtn) {
+//     openBtn.addEventListener('click', (e) => {
+//         e.preventDefault();
+//             openPromoModal();
+//     });
+// }
+// if (closeBtn) {
+//     closeBtn.addEventListener('click', closePromoModal);
+// }
+
+// if (modalOverlay) {
+//     modalOverlay.addEventListener('click', (e) => {
+//         if (e.target === modalOverlay) closePromoModal();
+//     });
+// }
+
+// document.addEventListener('keydown', (e) => {
+//     if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+//         closePromoModal();
+//     }
+// });
+
+// renderSlides();  
+
+// // Добавьте эту функцию после существующего кода
+// function handlePromoButtonClick(event, targetElement) {
+//     // Предотвращаем стандартное поведение ссылки
+//     event.preventDefault();
+    
+//     // Закрываем модальное окно
+//     closePromoModal();
+    
+//     // Небольшая задержка перед прокруткой, чтобы модалка успела закрыться
+//     setTimeout(() => {
+//         // Находим форму
+//         const formElement = document.querySelector('#form');
+//         if (formElement) {
+//             formElement.scrollIntoView({
+//                 behavior: 'smooth',
+//                 block: 'start'
+//             });
+//         }
+//     }, 100);
+// }
+
+// // Измените функцию renderSlides, добавив data-атрибуты и обработчик:
+// function renderSlides() {
+//     const wrapper = document.getElementById('promoSlidesWrapper');
+//     if (!wrapper) return;
+//     if (!promosData.length) {
+//         wrapper.innerHTML = `<div class="swiper-slide" style="display:flex; align-items:center; justify-content:center; min-height:300px;">
+//                                 <div style="text-align:center; color:#9b7c64;">На данный момент акций нет.<br>Загляните позже!</div>
+//                              </div>`;
+//         return;
+//     }
+
+//     let slidesHtml = '';
+//     for (let i = 0; i < promosData.length; i++) {
+//         const promo = promosData[i];
+//         slidesHtml += `
+//             <div class="swiper-slide">
+//                 <div class="promo-slide">
+//                     <div>
+//                         <div class="promo-slide__title title title__accent">${escapeHtml(promo.title)}</div>
+//                         <div class="promo-slide__badge title">${escapeHtml(promo.badge)}</div>
+//                         <div class="promo-slide__desc">${escapeHtml(promo.description)}</div>
+//                     </div>
+//                     <div class="promo-slide__footer">
+//                         <a class="promo-slide__btn" href="#form" data-promo-index="${i}">${escapeHtml(promo.btn)}</a>
+//                     </div>
+//                 </div>
+//             </div>
+//         `;
+//     }
+//     wrapper.innerHTML = slidesHtml;
+    
+//     // Добавляем обработчики на все кнопки в слайдах
+//     const promoButtons = document.querySelectorAll('.promo-slide__btn');
+//     promoButtons.forEach(button => {
+//         // Удаляем старый обработчик, если есть
+//         button.removeEventListener('click', handlePromoButtonClick);
+//         // Добавляем новый обработчик
+//         button.addEventListener('click', (event) => handlePromoButtonClick(event, button));
+//     });
+// }
+
+// // Также добавим обработчик для обновления кнопок после инициализации Swiper
+// // Измените функцию initSwiper:
+// function initSwiper() {
+//     if (swiperInstance) {
+//         swiperInstance.destroy(true, true); 
+//     }
+//     const container = document.querySelector('#promoSwiperContainer');
+//     if (!container) return;
+    
+//     swiperInstance = new Swiper(container, {
+//         slidesPerView: 1,
+//         spaceBetween: 20,
+//         loop: promosData.length > 1,    
+//         navigation: {
+//             nextEl: '.promo-next',
+//             prevEl: '.promo-prev',
+//         },
+//         effect: 'slide',
+//         speed: 400,
+//         grabCursor: true,     
+//         simulateTouch: true,  
+//         touchRatio: 1,
+//         threshold: 5,
+//         breakpoints: {
+//             1001: { slidesPerView: 2,}
+//         },
+//         on: {
+//             init: function() {
+//                 // После инициализации Swiper обновляем обработчики кнопок
+//                 setTimeout(() => {
+//                     const promoButtons = document.querySelectorAll('.promo-slide__btn');
+//                     promoButtons.forEach(button => {
+//                         button.removeEventListener('click', handlePromoButtonClick);
+//                         button.addEventListener('click', (event) => handlePromoButtonClick(event, button));
+//                     });
+//                 }, 50);
+//             },
+//             slideChange: function() {
+//                 // При смене слайда также обновляем обработчики
+//                 setTimeout(() => {
+//                     const promoButtons = document.querySelectorAll('.promo-slide__btn');
+//                     promoButtons.forEach(button => {
+//                         button.removeEventListener('click', handlePromoButtonClick);
+//                         button.addEventListener('click', (event) => handlePromoButtonClick(event, button));
+//                     });
+//                 }, 50);
+//             }
+//         }
+//     });
+// }
 const promosData = [
     {
         title: "Скидка -15%:",
@@ -358,64 +654,7 @@ const promosData = [
     }
 ];
 
-let swiperInstance = null;  
-
-function renderSlides() {
-    const wrapper = document.getElementById('promoSlidesWrapper');
-    if (!wrapper) return;
-    if (!promosData.length) {
-        wrapper.innerHTML = `<div class="swiper-slide" style="display:flex; align-items:center; justify-content:center; min-height:300px;">
-                                <div style="text-align:center; color:#9b7c64;">На данный момент акций нет.<br>Загляните позже!</div>
-                             </div>`;
-        return;
-    }
-
-    let slidesHtml = '';
-    for (let promo of promosData) {
-        slidesHtml += `
-            <div class="swiper-slide">
-                <div class="promo-slide">
-                    <div>
-                        <div class="promo-slide__title title  title__accent">${escapeHtml(promo.title)}</div>
-                        <div class="promo-slide__badge title">${escapeHtml(promo.badge)}</div>
-                        <div class="promo-slide__desc">${escapeHtml(promo.description)}</div>
-                    </div>
-                    <div class="promo-slide__footer">
-                        <a class="promo-slide__btn" href="#">${escapeHtml(promo.btn)}</a>
-                    </div>
-                </div>
-            </div>
-        `;
-    }
-    wrapper.innerHTML = slidesHtml;
-}
-
-function initSwiper() {
-    if (swiperInstance) {
-        swiperInstance.destroy(true, true); 
-    }
-    const container = document.querySelector('#promoSwiperContainer');
-    if (!container) return;
-    
-    swiperInstance = new Swiper(container, {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: promosData.length > 1,    
-        navigation: {
-            nextEl: '.promo-next',
-            prevEl: '.promo-prev',
-        },
-        effect: 'slide',
-        speed: 400,
-        grabCursor: true,     
-        simulateTouch: true,  
-        touchRatio: 1,
-        threshold: 5,
-        breakpoints: {
-            1001: { slidesPerView: 2,}
-        }
-    });
-}
+let swiperInstance = null;
 
 function escapeHtml(str) {
     if (!str) return '';
@@ -427,18 +666,114 @@ function escapeHtml(str) {
     });
 }
 
-const modalOverlay = document.getElementById('promoModalOverlay');
-const openBtn = document.getElementById('promoShowBtn');
-const closeBtn = document.getElementById('promoModalCloseBtn');
+function handlePromoButtonClick(event) {
+    event.preventDefault();
+    closePromoModal();
+    
+    setTimeout(() => {
+        const formElement = document.querySelector('#form');
+        if (formElement) {
+            formElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }, 100);
+}
+
+function renderSlides() {
+    const wrapper = document.getElementById('promoSlidesWrapper');
+    if (!wrapper) return;
+    
+    if (!promosData.length) {
+        wrapper.innerHTML = `<div class="swiper-slide" style="display:flex; align-items:center; justify-content:center; min-height:300px;">
+                                <div style="text-align:center; color:#9b7c64;">На данный момент акций нет.<br>Загляните позже!</div>
+                             </div>`;
+        return;
+    }
+
+    let slidesHtml = '';
+    for (let i = 0; i < promosData.length; i++) {
+        const promo = promosData[i];
+        slidesHtml += `
+            <div class="swiper-slide">
+                <div class="promo-slide">
+                    <div>
+                        <div class="promo-slide__title title title__accent">${escapeHtml(promo.title)}</div>
+                        <div class="promo-slide__badge title">${escapeHtml(promo.badge)}</div>
+                        <div class="promo-slide__desc">${escapeHtml(promo.description)}</div>
+                    </div>
+                    <div class="promo-slide__footer">
+                        <a class="promo-slide__btn" href="#form" data-promo-index="${i}">${escapeHtml(promo.btn)}</a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    wrapper.innerHTML = slidesHtml;
+    
+    const promoButtons = document.querySelectorAll('.promo-slide__btn');
+    promoButtons.forEach(button => {
+        button.removeEventListener('click', handlePromoButtonClick);
+        button.addEventListener('click', handlePromoButtonClick);
+    });
+}
+
+function initSwiper() {
+    if (swiperInstance) {
+        swiperInstance.destroy(true, true);
+    }
+    
+    const container = document.querySelector('#promoSwiperContainer');
+    if (!container) return;
+    
+    swiperInstance = new Swiper(container, {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: promosData.length > 1,
+        navigation: {
+            nextEl: '.promo-next',
+            prevEl: '.promo-prev',
+        },
+        effect: 'slide',
+        speed: 400,
+        grabCursor: true,
+        simulateTouch: true,
+        touchRatio: 1,
+        threshold: 5,
+        breakpoints: {
+            1001: { slidesPerView: 2 }
+        },
+        on: {
+            init: function() {
+                setTimeout(() => {
+                    const promoButtons = document.querySelectorAll('.promo-slide__btn');
+                    promoButtons.forEach(button => {
+                        button.removeEventListener('click', handlePromoButtonClick);
+                        button.addEventListener('click', handlePromoButtonClick);
+                    });
+                }, 50);
+            },
+            slideChange: function() {
+                setTimeout(() => {
+                    const promoButtons = document.querySelectorAll('.promo-slide__btn');
+                    promoButtons.forEach(button => {
+                        button.removeEventListener('click', handlePromoButtonClick);
+                        button.addEventListener('click', handlePromoButtonClick);
+                    });
+                }, 50);
+            }
+        }
+    });
+}
 
 function openPromoModal() {
     if (!modalOverlay) return;
-
+    
     renderSlides();
-        
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-        
+    
     setTimeout(() => {
         initSwiper();
     }, 80);
@@ -448,19 +783,25 @@ function closePromoModal() {
     if (modalOverlay) {
         modalOverlay.classList.remove('active');
         document.body.style.overflow = '';
-         if (swiperInstance) {
+        
+        if (swiperInstance) {
             swiperInstance.destroy(true, true);
             swiperInstance = null;
         }
     }
 }
 
+const modalOverlay = document.getElementById('promoModalOverlay');
+const openBtn = document.getElementById('promoShowBtn');
+const closeBtn = document.getElementById('promoModalCloseBtn');
+
 if (openBtn) {
     openBtn.addEventListener('click', (e) => {
         e.preventDefault();
-            openPromoModal();
+        openPromoModal();
     });
 }
+
 if (closeBtn) {
     closeBtn.addEventListener('click', closePromoModal);
 }
@@ -477,7 +818,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-renderSlides();  
+
 
 
 // --------------input-tel
