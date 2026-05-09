@@ -35,6 +35,38 @@ document.addEventListener('keydown', (e) => {
 
 
 
+// hero-modal
+const modal = document.querySelector('.modal-hero');
+const modalButtons = document.querySelectorAll('.hero-slide__btn');
+
+modalButtons.forEach(button => {
+    button.addEventListener('click', openModal);
+});
+
+function openModal(e) {
+    e.preventDefault();
+    document.body.classList.add('body--opened-modal'); 
+}
+
+modal.addEventListener('click', closeModal);
+
+function closeModal(e) {
+    e.preventDefault();
+    const target = e.target;
+    
+    if (target.closest('.modal__cancel') || target === modal) {
+        document.body.classList.remove('body--opened-modal');
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.body.classList.contains('body--opened-modal')) {
+        document.body.classList.remove('body--opened-modal');
+    }
+});
+
+
+
 // hero-slider
 const heroSwiper = new Swiper('.hero-swiper', {
     slidesPerView: 1, 
