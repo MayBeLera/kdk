@@ -1695,6 +1695,9 @@ body {
     text-align: center;
     gap: 10px;
 }
+.feedback__item{
+  max-width: 500px;
+}
   .feedback__inner {
     padding: 20px;
 }
