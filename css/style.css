@@ -1694,16 +1694,32 @@ body {
     align-items: center;
     text-align: center;
     gap: 10px;
-}
-.feedback__item{
-  max-width: 500px;
-}
+  }
+  .feedback__item {
+    max-width: 500px;
+  }
   .feedback__inner {
     padding: 20px;
-}
+  }
   .feedback-slide {
     padding: 15px;
-}
+  }
+  .promo-modal,
+  .promo-slide,
+  .form__inner form {
+    padding: 30px 20px;
+  }
+  .promo-modal .title {
+    font-size: 25px;
+  }
+  .promo-slide {
+    min-height: 315px;
+  }
+  .promo-slide__btn {
+    font-size: 16px;
+    width: auto;
+    text-align: center;
+  }
   /* ----------------------------------------------------------- */
   .stocks__column {
     padding: 40px;
