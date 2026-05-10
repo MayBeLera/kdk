@@ -12,6 +12,7 @@
 .tab-controls {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 .tab-controls__link {
   display: block;
@@ -338,11 +339,11 @@
 }
 
 /* ------------------------------------------------------------------------------------------------- */
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .tab-controls {
     flex-wrap: wrap;
   }
-}
+} */
 @media (max-width: 900px) {
   .hero-doctor__inner {
     flex-direction: column-reverse;
