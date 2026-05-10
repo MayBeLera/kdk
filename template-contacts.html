@@ -70,10 +70,10 @@
                                 <nav class="nav">
                                     <p class="column__title">Меню</p>
                                     <ul class="nav__list">
-                                        <li class="nav__item"><a href="#">Врачи</a></li>
-                                        <li class="nav__item"><a href="#">Услуги и цены</a></li>
+                                        <li class="nav__item"><a href="template-doctors.html">Врачи</a></li>
+                                        <li class="nav__item"><a href="template-services.html">Услуги и цены</a></li>
                                         <li class="nav__item"><a href="#">Работы врачей</a></li>
-                                        <li class="nav__item"><a href="#">Контакты</a></li>
+                                        <li class="nav__item"><a href="template-contacts.html">Контакты</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -362,15 +362,12 @@ accordionLists.forEach(el => {
         const accordionItem = accordionControl.closest('.accordion-list__item');
         const accordionContent = accordionControl.nextElementSibling;
         
-        // Проверяем: есть ли контент для раскрытия
         if (!accordionContent || !accordionContent.classList.contains('accordion-list__content')) {
-            // Если нет контента - это просто ссылка, пусть работает как обычно
             return;
         }
         
-        e.preventDefault(); // Отменяем переход только для аккордеонов
+        e.preventDefault();
         
-        // Далее ваш код аккордеона...
         const openedItem = el.querySelector('.accordion-list__item--opened');
         
         if (openedItem && openedItem !== accordionItem) {
@@ -393,71 +390,6 @@ accordionLists.forEach(el => {
         }
     });
 });
-// const accordionLists = document.querySelectorAll('.accordion-list');
-
-// accordionLists.forEach(el => {
-//     el.addEventListener('click', (e) => {
-//         const accordionControl = e.target.closest('.accordion-list__control');
-//         if (!accordionControl) return;
-//         e.preventDefault();
-        
-//         const accordionItem = accordionControl.parentElement;
-//         const accordionContent = accordionControl.nextElementSibling;
-        
-//         // Закрываем все остальные
-//         const allItems = el.querySelectorAll('.accordion-list__item');
-//         allItems.forEach(item => {
-//             if (item !== accordionItem && item.classList.contains('accordion-list__item--opened')) {
-//                 item.classList.remove('accordion-list__item--opened');
-//                 const content = item.querySelector('.accordion-list__content');
-//                 content.style.maxHeight = null;
-//             }
-//         });
-        
-//         // Переключаем текущий
-//         accordionItem.classList.toggle('accordion-list__item--opened');
-        
-//         if (accordionItem.classList.contains('accordion-list__item--opened')) {
-//             accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-//         } else {
-//             accordionContent.style.maxHeight = null;
-//         }
-//     });
-// });
-
-
-
-// const accordionLists = document.querySelectorAll('.accordion-list');
-
-// accordionLists.forEach(el => {
-
-//   el.addEventListener('click', (e) => {
-
-//     const accordionList = e.currentTarget
-//     const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened')
-//     const accordionOpenedContent = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content')
-
-//     const accordionControl = e.target.closest('.accordion-list__control');
-//     if (!accordionControl) return
-//     e.preventDefault()
-//     const accordionItem = accordionControl.parentElement;
-//     const accordionContent = accordionControl.nextElementSibling;
-
-//     if (accordionOpenedItem && accordionItem != accordionOpenedItem) {
-//       accordionOpenedItem.classList.remove('accordion-list__item--opened');
-//       accordionOpenedContent.style.maxHeight = null;
-//     }
-//     accordionItem.classList.toggle('accordion-list__item--opened');
-
-//     if (accordionItem.classList.contains('accordion-list__item--opened')) {
-//       accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-//     } else {
-//       accordionContent.style.maxHeight = null;
-//     }
-
-//     });
-
-// });
 
 
     </script>

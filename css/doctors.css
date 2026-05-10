@@ -18,6 +18,7 @@
   padding: 14px 16px;
   background: #fff;
   border-radius: 40px;
+  white-space: nowrap;
   transition: all 0.3s;
 }
 .tab-controls__link--active,
@@ -38,6 +39,46 @@
 }
 .tab-content--show {
   display: block;
+}
+.tab-content__title {
+  margin-bottom: 40px;
+}
+.tab-content__services-list{
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 40px;
+  color: rgba(34, 53, 68, 0.8);
+  line-height: 140%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.tab-content__services-list li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.tab-content__services-list li p:last-child{
+  white-space: nowrap;
+}
+.tab-content__services-swiper{
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 40px;
+}
+.tab-swiper{
+  margin-top: 40px;
+}
+.tab-slide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tab-content__services-swiper img{
+  max-width: 300px;
+  border-radius: 24px;
+  overflow: hidden;
 }
 /* ------------------------------------------------------------------------------------------------- */
 .hero-doctor__inner {
@@ -91,6 +132,29 @@
   color: rgba(55, 48, 55, 0.6);
   font-size: 20px;
   line-height: 120%;
+}
+.hero-doctor__bottom{
+  margin-top: 40px;
+}
+.hero-doctor__bottom .tab-content{
+  margin-top: 20px;
+}
+.hero-doctor__bottom .tab-content__services-list {
+  list-style: disc;
+}
+.hero-doctor__bottom .tab-content__services-list li {
+    display: list-item; 
+    list-style: disc;
+    margin-left: 15px;
+    /* margin-bottom: 8px; */
+}
+/* .hero-doctor__bottom .tab-content__services-list li:last-child{
+  margin-bottom: 0;
+} */
+.tab__arrows{
+  display: flex;
+  justify-content: end;
+  gap: 15px;
 }
 .accordion-list {
   display: flex;
@@ -168,12 +232,9 @@
   flex-direction: column;
   gap: 24px;
 }
-/* Открытое состояние - даем запас по высоте */
 .accordion-list__item--opened .accordion-list__content {
   max-height: 1000px;
 }
-
-/* А эти стили оставьте только для открытого состояния */
 .accordion-list__item--opened .accordion-list__content {
   max-height: 800px;
 }
