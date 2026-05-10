@@ -411,7 +411,7 @@ body {
   color: rgb(255, 255, 255, 0.8);
 }
 .hero-slide__btn,
-.tab-portfolio__btn{
+.tab-portfolio__btn {
   max-width: 300px;
   padding: 16px 24px;
   background: #ffffff;
@@ -634,14 +634,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   overflow: visible;
   position: relative;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 .directions__item:hover {
   transform: translateY(-20px);
-  box-shadow: 0 -10px 30px -8px rgba(0, 0, 0, 0.15), 0 8px 20px -6px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 -10px 30px -8px rgba(0, 0, 0, 0.15),
+    0 8px 20px -6px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
 .directions-swiper .swiper-horizontal > .swiper-scrollbar,
@@ -787,6 +791,9 @@ body {
   padding: 40px;
   color: #ffffff;
   margin-bottom: 20px;
+  background-image: url("../img/feedback.png");
+  background-repeat: no-repeat;
+  background-position: 85% 12%;
 }
 .feedback__top {
   display: flex;
