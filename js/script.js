@@ -827,3 +827,5 @@ document.addEventListener('DOMContentLoaded', function() {
     Inputmask("+7 (999) 999-99-99").mask('input[type="tel"]');
   }
 });
+
+

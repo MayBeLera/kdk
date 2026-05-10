@@ -1,6 +1,7 @@
 /* ------------------------------------------------------------------------------------------------- */
 .hero-section,
-.tab-content {
+.tab-content,
+.accorfion__body {
   margin-top: 80px;
 }
 .section__title {
@@ -24,12 +25,12 @@
   background: var(--accent);
   color: #ffffff;
 }
-.accordion-list {
+.doctors__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-.accordion-list__item {
+.doctors__item {
   cursor: pointer;
 }
 .tab-content {
@@ -38,7 +39,144 @@
 .tab-content--show {
   display: block;
 }
+/* ------------------------------------------------------------------------------------------------- */
+.hero-doctor__inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.hero-doctor__column:last-child {
+  max-width: 555px;
+  width: 100%;
+}
+.hero-doctor__column img {
+  max-width: 555px;
+  width: 100%;
+  border-radius: 100%;
+}
+.hero-doctor__title {
+  margin-bottom: 40px;
+}
+.hero-doctor__desc {
+  font-size: 24px;
+  line-height: 120%;
+  margin-bottom: 24px;
+  max-width: 90%;
+  color: rgba(55, 48, 55, 0.8);
+}
+.hero-doctor__text {
+  font-size: 20px;
+  line-height: 120%;
+  color: rgba(55, 48, 55, 0.8);
+  margin-bottom: 24px;
+}
+.hero-doctor__exp {
+  font-size: 20px;
+  line-height: 120%;
+  color: rgba(55, 48, 55, 0.8);
+  margin-bottom: 40px;
+}
+.hero-doctor__block {
+  border-radius: 40px;
+  padding: 40px;
+  background: #ffffff;
+}
+.hero-doctor__block p:first-child {
+  color: rgba(55, 48, 55, 0.6);
+  font-size: 14px;
+  line-height: 120%;
+  margin-bottom: 12px;
+}
+.hero-doctor__block p:last-child {
+  color: rgba(55, 48, 55, 0.6);
+  font-size: 20px;
+  line-height: 120%;
+}
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.accordion-list__control {
+  padding: 24px 30px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 40px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s;
+}
+.accordion-list__control-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 
+  transition: all 0.3s;
+}
+.accordion-list__control-icon svg {
+  transition: all 0.3s;
+}
+.accordion-list__control:hover svg {
+  transform: rotate(90deg);
+  fill: var(--accent);
+}
+.accordion-list__control:hover .accordion-list__control-icon path {
+  fill: var(--general-bg);
+}
+.accordion-list__item--opened .accordion-list__control-icon svg {
+  transform: rotate(90deg);
+}
+.accordion-list__item--opened .accordion-list__control-icon path {
+  fill: var(--accent);
+}
+.accordion-list__item--opened.accordion-list__item {
+  margin-bottom: 28px;
+}
+.accordion-list__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.accordion-list__content-inner {
+  padding: 40px;
+  background: #fff;
+  border-radius: 40px;
+  margin-top: 12px;
+  color: rgba(55, 48, 55, 0.95);
+}
+.accordion-list__content-inner p {
+  font-size: 18px;
+  line-height: 140%;
+}
+.accordion-list__content-inner a {
+  text-decoration: underline;
+  transition: all 0.3s;
+}
+.accordion-list__content-inner a:hover {
+  color: var(--accent);
+}
+.accordion-list__item:nth-child(2) p {
+  font-size: 16px;
+}
+.accordion-list__content-links {
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+/* Открытое состояние - даем запас по высоте */
+.accordion-list__item--opened .accordion-list__content {
+  max-height: 1000px;
+}
+
+/* А эти стили оставьте только для открытого состояния */
+.accordion-list__item--opened .accordion-list__content {
+  max-height: 800px;
+}
 
 /* ------------------------------------------------------------------------------------------------- */
 .contacts__inner {
@@ -91,7 +229,7 @@
   }
   .section__title {
     font-size: 55px;
-}
+  }
 }
 
 @media (max-width: 600px) {
@@ -107,14 +245,11 @@
   }
   .section__title {
     font-size: 45px;
+  }
+  .contacts__column:first-child {
+    max-height: 400px;
+  }
 }
-    .contacts__column:first-child
- {
-        max-height: 400px;
-    }
-}
-
-
 
 @media (max-width: 1000px) {
   .contacts__inner {
@@ -129,5 +264,14 @@
     max-width: 900px;
     width: 100%;
     margin: 0 auto;
+  }
+}
+@media (max-width: 500px) {
+  .accordion-list__content-inner {
+    padding: 25px;
+  }
+  .accordion-list__content-inner p,
+  .accordion-list__item:nth-child(2) p {
+    font-size: 15px;
   }
 }
